@@ -62,7 +62,7 @@ const AboutPage = () => {
               We envision a world where cultural heritage transcends boundaries
               through technology. By creating a seamless connection between
               institutions, artists, and audiences, we enable new discoveries,
-              foster collaboration, and inspire a deeper appreciation of our
+              foster collaboration, and inspire a greater appreciation of our
               shared cultural narrative. Our vision is a future where technology
               elevates human beings with information, knowledge, experience, and
               art, promoting and encouraging healthy people and planet Earth.
