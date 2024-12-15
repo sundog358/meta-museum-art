@@ -27,11 +27,13 @@ export default function ContactPage() {
   const handleSubmit = async (formData: FormData) => {
     setIsSubmitting(true);
     try {
-      // Add a small delay to prevent UI freezing
       await new Promise((resolve) => setTimeout(resolve, 100));
-
-      // Your form submission logic here
-      // ...
+      console.log({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+      });
+      alert("Thank you for your message!");
     } catch (error) {
       console.error("Error submitting form:", error);
     } finally {
