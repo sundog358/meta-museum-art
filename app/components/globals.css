@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root Variables */
+:root {
+  --foreground: #000000; /* Black text for day mode */
+  --background: #dceeff; /* Light blue background for day mode */
+  --card-background: #ffffff; /* White card background for day mode */
+  --text-color: #333333; /* Readable dark gray text for day mode */
+  --link-color: #1e3a8a; /* Blue link color for day mode */
+  --link-hover-color: #2563eb; /* Darker blue on hover for day mode */
+}
+
+/* Dark Mode Variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #ffffff; /* White text for night mode */
+    --background: #102a43; /* Softer dark navy blue background for night mode */
+    --card-background: #243b55; /* Slightly lighter navy for cards in dark mode */
+    --text-color: #d1d5db; /* Light gray text for readability */
+    --link-color: #3b82f6; /* Bright blue link color for night mode */
+    --link-hover-color: #60a5fa; /* Lighter blue on hover for night mode */
+  }
+}
+
+/* Base Styling */
+@layer base {
+  /* Apply background and text colors */
+  body {
+    background-color: var(--background); /* Background color based on theme */
+    color: var(--text-color); /* Text color based on theme */
+    font-family: "Inter", sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  }
+
+  /* Links */
+  a {
+    color: var(--link-color); /* Link color based on theme */
+    text-decoration: underline;
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+
+  a:hover {
+    color: var(--link-hover-color); /* Hover color effect for links */
+  }
+
+  /* Cards */
+  .card {
+    background-color: var(
+      --card-background
+    ); /* Card background based on theme */
+    color: var(--text-color); /* Card text color */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  }
+
+  /* Headers */
+  header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--foreground); /* Consistent header color based on theme */
+  }
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-color); /* Paragraph color based on theme */
+  }
+
+  /* Full Page Background for Specific Elements */
+  main,
+  div.page-wrapper,
+  .min-h-screen {
+    background-color: var(--background); /* Full page background */
+    color: var(--text-color); /* Full page text color */
+  }
+
+  /* Dark Mode Overrides for Enhanced Contrast */
+  :root[class~="dark"] body,
+  :root[class~="dark"] main,
+  :root[class~="dark"] .min-h-screen {
+    background-color: var(--background); /* Dark navy background */
+    color: var(--foreground); /* White text for contrast */
+  }
+}
+
+/* Comments Summary:
+   - Updated the `--background` for both light and dark themes:
+     - Day mode: Light blue (#dceeff).
+     - Night mode: Soft dark navy blue (#102a43).
+   - Ensured smooth transitions for background and text colors using `transition`.
+   - Applied theme-based styling to `body`, `main`, `.page-wrapper`, and `.min-h-screen`.
+   - Link colors change dynamically for light and dark modes with hover effects.
+   - Cards have theme-based backgrounds and colors for consistency.
+*/

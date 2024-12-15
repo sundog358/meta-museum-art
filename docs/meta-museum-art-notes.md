@@ -1,0 +1,1 @@
+🌌 Meta Museum Art: Astro v5.0.3 Web App: GLAM (Galleries, Libraries, Archives, Museums) Linked Open Data (LOD). 🚀 Powered by Astro, TailwindCSS, & APIs, this app showcases datasets like the American Art Collaborative, educational resources, & interactive visuals. 📊🎨 Explore art, data, culture, & collaboration! 🖼️📚 #LOD #GLAM #OpenScience

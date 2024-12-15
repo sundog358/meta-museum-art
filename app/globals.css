@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Default Light Mode Variables */
+  :root {
+    --background: #dfeff4; /* Light blue background */
+    --foreground: #051152; /* Navy blue text for light mode */
+
+    --card: #ffffff; /* Card background for light mode */
+    --card-foreground: #111111; /* Card text color for light mode */
+
+    --popover: #ffffff; /* Popover background for light mode */
+    --popover-foreground: #111111; /* Popover text for light mode */
+
+    --primary: #1e3a8a; /* Primary link color for light mode */
+    --primary-foreground: #ffffff; /* Text color for primary buttons */
+
+    --secondary: #93c5fd; /* Secondary accent color */
+    --secondary-foreground: #060e54; /* Dark text for secondary elements */
+
+    --muted: #f3f4f6; /* Muted elements for light mode */
+    --muted-foreground: #194eb9;
+
+    --accent: #2563eb; /* Accent color for links/buttons */
+    --accent-foreground: #ffffff; /* White text on accents */
+
+    --destructive: #ef4444; /* Red for destructive actions */
+    --destructive-foreground: #ffffff; /* White text on destructive buttons */
+
+    --border: #e5e7eb; /* Light border color */
+    --input: #f9fafb; /* Light input background */
+    --ring: #3b82f6; /* Focus ring color */
+    --radius: 0.5rem; /* Default border-radius */
+  }
+
+  /* Dark Mode Variables */
+  :root[class~="dark"] {
+    --background: #02104c; /* Softer dark navy for night mode */
+    --foreground: #ffffff; /* White text for dark mode */
+
+    --card: #112240; /* Slightly lighter navy for cards in dark mode */
+    --card-foreground: #ffffff; /* White text on cards */
+
+    --popover: #112240; /* Dark popover background */
+    --popover-foreground: #e0e0e0; /* Light gray for popover text */
+
+    --primary: #3b82f6; /* Bright blue for links in dark mode */
+    --primary-foreground: #ffffff; /* White text on primary buttons */
+
+    --secondary: #1e3a8a; /* Dark blue for secondary elements */
+    --secondary-foreground: #e0e0e0; /* Light gray for secondary text */
+
+    --muted: #1c2e4a; /* Muted dark navy */
+    --muted-foreground: #a1a1a1; /* Subtle gray for muted text */
+
+    --accent: #2563eb; /* Bright blue for accents in dark mode */
+    --accent-foreground: #ffffff; /* White text on accents */
+
+    --destructive: #f87171; /* Red for destructive actions in dark mode */
+    --destructive-foreground: #ffffff; /* White text on destructive buttons */
+
+    --border: #1a427a; /* Dark gray for borders */
+    --input: #1e293b; /* Slightly lighter navy for inputs */
+    --ring: #2563eb; /* Bright blue for focus rings */
+  }
+
+  /* Ensure background and text color transitions */
+  body,
+  main,
+  .min-h-screen {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  /* Force dark mode colors when .dark class is present */
+  :root[class~="dark"] body,
+  :root[class~="dark"] main,
+  :root[class~="dark"] .min-h-screen {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  /* Force background color application */
+  html,
+  body,
+  main,
+  .min-h-screen,
+  div.page-wrapper {
+    @apply bg-background text-foreground;
+    background-color: var(--background) !important;
+    color: var(--foreground);
+    min-height: 100vh;
+  }
+}
+
+@layer base {
+  /* Apply borders globally */
+  * {
+    @apply border-border;
+  }
+
+  /* Apply background and text colors to the body */
+  body {
+    @apply bg-background text-foreground transition-colors;
+  }
+
+  /* Main content styling for all pages */
+  main,
+  div.page-wrapper,
+  .min-h-screen {
+    @apply bg-background text-foreground;
+  }
+
+  /* Ensure readability for dark mode text */
+  .prose {
+    color: var(--foreground);
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose strong {
+    color: var(--foreground);
+    font-weight: bold;
+  }
+
+  .prose p,
+  .prose li {
+    color: var(--foreground);
+  }
+
+  /* Style for links */
+  a {
+    color: var(--primary); /* Use primary color for links */
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: var(--accent); /* Accent color on hover */
+  }
+
+  /* Card component styling */
+  .card {
+    background-color: var(--card);
+    color: var(--card-foreground);
+    border-radius: var(--radius, 0.5rem);
+    box-shadow: 0 4px 6px rgba(50, 10, 129, 0.1);
+    padding: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+
+/* Comments Summary:
+   - Adjusted `--background` in dark mode to a softer navy blue `#02104c`.
+   - Text readability improved with white `--foreground` for dark mode.
+   - Smooth transitions between modes for better user experience.
+   - Clear comments added for maintainability and understanding.
+*/

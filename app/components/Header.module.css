@@ -1,0 +1,80 @@
+.header {
+  @apply sticky top-0 z-50 w-full border-b backdrop-blur-sm;
+  background: linear-gradient(to right, #011f80, #ffffff);
+  height: 5rem;
+}
+
+.header.dark {
+  background: linear-gradient(to right, #f7eb02, #c9d6fa);
+}
+
+.container {
+  @apply mx-auto px-4;
+}
+
+.nav {
+  @apply flex items-center justify-between;
+  height: 5rem;
+}
+
+.logo {
+  @apply flex items-center space-x-3 no-underline;
+}
+
+.logoText {
+  @apply font-sans font-bold text-xl flex items-center gap-0.5;
+}
+
+.logoMeta,
+.logoMuseum,
+.logoArt {
+  @apply text-white font-black text-2xl tracking-tight;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode variations */
+.logoText.dark .logoMeta,
+.logoText.dark .logoMuseum,
+.logoText.dark .logoArt {
+  @apply text-blue-900;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.navigation {
+  @apply hidden md:flex items-center space-x-8;
+}
+
+.navLink {
+  @apply relative text-blue-900 font-semibold py-2 px-4 rounded-lg transition-all;
+  background: linear-gradient(90deg, #fde047, #facc15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navLink:hover {
+  @apply text-blue-900;
+  background: linear-gradient(90deg, #facc15, #eab308);
+  transform: scale(1.05);
+}
+
+.navLink.dark {
+  @apply text-blue-900 font-bold;
+  background: linear-gradient(90deg, #fef9c3, #fde047);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.navLink.dark:hover {
+  background: linear-gradient(90deg, #fde047, #fef9c3);
+  transform: scale(1.05);
+}
+
+.themeToggle {
+  @apply p-2 rounded-full transition-colors;
+}
+
+.themeToggle:hover {
+  @apply bg-blue-100/50;
+}
+
+.themeToggle.dark:hover {
+  @apply bg-blue-900;
+}
