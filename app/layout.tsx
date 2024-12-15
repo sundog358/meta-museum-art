@@ -15,6 +15,25 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "Meta Museum Art",
   description: "Explore cultural heritage through connected data.",
+  openGraph: {
+    title: "Meta Museum Art",
+    description: "Explore cultural heritage through connected data.",
+    images: [
+      {
+        url: "images/metawikiart3.png",
+        width: 600,
+        height: 450,
+        alt: "Meta Museum Art Illustration",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Meta Museum Art",
+    description: "Explore cultural heritage through connected data.",
+    images: ["images/metawikiart3.png"],
+  },
 };
 
 export default function RootLayout({
