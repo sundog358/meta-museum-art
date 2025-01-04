@@ -59,23 +59,23 @@ export default function DatasetsPage() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-4 text-foreground">
-            🖼️ Project Highlights
-          </h2>
-          <p className="text-lg mb-4 text-foreground">
-            The AAC uses a <strong>federated model</strong> for data publishing,
-            allowing each member to maintain and present its data independently
-            while leveraging shared best practices. This ensures:
-          </p>
-          <ul className="list-disc list-inside text-lg mb-6 text-foreground">
-            <li>Sustainable, cost-effective data management. 💾</li>
-            <li>Consistency and interoperability across datasets. 🤝</li>
-            <li>
-              Broad access to interconnected art data for research and public
-              engagement.
-            </li>
-          </ul>
-        </section>
+  <h2 className="text-3xl font-bold mb-4 text-foreground">🖼️ Project Highlights</h2>
+  <p className="text-lg mb-4 text-foreground">
+    The AAC employs a <strong>Consortium Model</strong> for data publishing, empowering each member institution to independently maintain and present their data while adhering to shared best practices. This approach ensures:
+  </p>
+  <ul className="list-disc list-inside text-lg mb-6 text-foreground space-y-4">
+    <li>💾 Sustainable, Cost-Effective Data Management: Each institution manages its own data, reducing centralized costs and allowing for tailored solutions that fit individual needs.</li>
+    <li>🤝 Consistency and Interoperability Across Datasets: By adhering to a common framework, the datasets from different museums are standardized, ensuring they can seamlessly integrate and interact with one another. This interoperability enhances the quality of research and public access.</li>
+    <li>🌐 Enhanced Access to Interconnected Art Data: The federated model allows for the integration of diverse datasets, creating a rich, interconnected network of art data that is accessible to researchers, educators, and the public. This interconnectedness fosters deeper insights and broader engagement with cultural heritage.</li>
+    <li>🔍 Innovative Research and Public Engagement: The availability of comprehensive and linked datasets enables innovative research opportunities, supports advanced scholarly endeavors, and encourages public engagement through interactive interfaces and educational tools.</li>
+    <li>✨ Showcase of Member Institutions&apos; Collections: Each member institution can highlight its unique collections while contributing to a collective repository, promoting a wider appreciation of diverse art holdings.</li>
+  </ul>
+  <p className="text-lg mb-4 text-foreground">
+    🚀 Explore AAC Datasets Today! Visit the <a href="https://github.com/american-art" className="text-blue-500">AAC GitHub</a> for access.
+  </p>
+</section>
+
+
 
         <footer className="text-center mt-16">
           <p className="text-lg text-foreground">
