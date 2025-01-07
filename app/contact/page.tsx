@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useFormStatus } from "react-dom";
+import { handleSubmit } from "../actions/handleSubmit"; // Adjust the path as necessary
 
 // Separate submit button component with loading state
 function SubmitButton() {
@@ -44,22 +45,6 @@ function SubmitButton() {
 }
 
 export default function ContactPage() {
-  async function handleSubmit(formData: FormData) {
-    "use server";
-
-    // Simulate network delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    // Process form data
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    };
-
-    console.log("Form data:", data);
-  }
-
   return (
     <main className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16">
