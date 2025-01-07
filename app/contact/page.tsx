@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useFormStatus } from "react-dom";
 
-// Separate submit button component to handle loading state
+// Separate submit button component with loading state
 function SubmitButton() {
   const { pending } = useFormStatus();
 
@@ -16,30 +16,49 @@ function SubmitButton() {
                 disabled:opacity-50 disabled:cursor-not-allowed"
       aria-label={pending ? "Sending..." : "Send Message"}
     >
-      {pending ? "Sending..." : "Send Message"}
+      {pending ? (
+        <span className="flex items-center justify-center gap-2">
+          <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+            <circle
+              className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="4"
+              fill="none"
+            />
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            />
+          </svg>
+          Sending...
+        </span>
+      ) : (
+        "Send Message"
+      )}
     </button>
   );
 }
 
 export default function ContactPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  async function handleSubmit(formData: FormData) {
+    "use server";
 
-  const handleSubmit = async (formData: FormData) => {
-    setIsSubmitting(true);
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 100));
-      console.log({
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
-      });
-      alert("Thank you for your message!");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    // Simulate network delay
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Process form data
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    console.log("Form data:", data);
+  }
 
   return (
     <main className="min-h-screen bg-background">
@@ -62,7 +81,6 @@ export default function ContactPage() {
                   name="name"
                   required
                   className="w-full px-3 py-2 border rounded-md"
-                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -78,7 +96,6 @@ export default function ContactPage() {
                   name="email"
                   required
                   className="w-full px-3 py-2 border rounded-md"
-                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -94,7 +111,6 @@ export default function ContactPage() {
                   required
                   rows={4}
                   className="w-full px-3 py-2 border rounded-md"
-                  disabled={isSubmitting}
                 />
               </div>
               <SubmitButton />
