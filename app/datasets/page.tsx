@@ -63,9 +63,9 @@ export default function DatasetsPage() {
             🖼️ Project Highlights
           </h2>
           <p className="text-lg mb-4 text-foreground">
-            The AAC uses a <strong>Consortium Model</strong> for data
-            publishing, allowing each member to maintain and present its data
-            independently while leveraging shared best practices. This ensures:
+            The AAC uses a <strong>federated model</strong> for data publishing,
+            allowing each member to maintain and present its data independently
+            while leveraging shared best practices. This ensures:
           </p>
           <ul className="list-disc list-inside text-lg mb-6 text-foreground">
             <li>Sustainable, cost-effective data management. 💾</li>
